@@ -2,7 +2,7 @@
 from email_feature_extractor import EmailFeatureExtractor
 import joblib
 
-xgb_model  = joblib.load("xgb_refined_spam_model.pkl")
+xgb_model  = joblib.load("model/xgb_refined_spam_model.pkl")
 
 
 # Example email
@@ -15,7 +15,8 @@ Hurry, offer expires today. Visit www.superprizes.com and enter your details imm
 extractor = EmailFeatureExtractor(email_text)
 X_single = extractor.to_dataframe()
 
-print(X_single)
+print(extractor.to_dict())
+
 
 
 # Predict
